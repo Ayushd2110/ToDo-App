@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:background="?android:attr/selectableItemBackground"
+        android:orientation="vertical"
+      >
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Please Enter TodoList Task"
+            android:textColor="@color/black"
+            android:textSize="14dp" />
+
+        <EditText
+            android:id="@+id/edEdtTask"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:hint="Enter Task Here.."
+            android:textColor="@color/black"
+            android:textSize="12dp"
+            android:textColorHint="@color/black"
+            android:background="@drawable/border"
+            android:padding="8dp" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <Button
+                android:id="@+id/btCancel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="0.5"
+                android:text="Cancel"></Button>
+
+            <Button
+                android:id="@+id/btAdd"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="0.5"
+                android:text="Add Item"></Button>
+
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
