@@ -63,3 +63,30 @@ fun bindID() {
 }
 
 
+fun addItemDialog() {
+    val bottomSheetDialog = BottomSheetDialog(this)
+    val view: View = getLayoutInflater().inflate(R.layout.add_item_layout, null)
+    bottomSheetDialog.setContentView(view)
+    val edEditTask = view.findViewById<View>(R.id.edEdtTask) as EditText
+    val btCancel = view.findViewById<View>(R.id.btCancel) as Button
+    val btAdd = view.findViewById<View>(R.id.btAdd) as Button
+    btAdd.setOnClickListener {
+        val edItem = edEditTask.text.toString()
+        if (!edItem.isEmpty()) {
+            arrayList!!.add(edItem)
+            adapter!!.notifyDataSetChanged()
+            Toast.makeText(this@MainActivity, "Item Added Successfully", Toast.LENGTH_SHORT).show()
+            //dismiss dialog once item is added successfully
+            bottomSheetDialog.dismiss()
+        } else {
+            Toast.makeText(
+                getApplicationContext(),
+                " Please Add atleast one item",
+                Toast.LENGTH_SHORT
+            ).show()
+        }
+    }
+    btCancel.setOnClickListener { bottomSheetDialog.dismiss() }
+    bottomSheetDialog.show()
+}
+}
